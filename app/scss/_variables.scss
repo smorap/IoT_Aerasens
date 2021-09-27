@@ -1,0 +1,24 @@
+/* Colores
+Verde hoja claro    hsl(81, 58%, 50%)
+Verde hoja oscuro   hsl(115, 100%, 23%)
+Madera  hsl(30, 58%, 33%)
+Azul claro  hsl(221, 60%, 50%)
+Azul oscuro hsl(252, 100%, 28%)
+Blanco: hsl(0, 0%, 100%)
+*/
+$Verde_hoja_claro:  hsl(81, 58%, 50%);
+$Verde_ultra_claro: hsl(118, 54%, 95%);
+$Verde_hoja_oscuro: hsl(115, 100%, 23%);
+$Madera:            hsl(30, 58%, 33%);
+$Azul_claro:        hsl(221, 60%, 50%);
+$Azul_oscuro:       hsl(252, 100%, 28%);
+$Azul_ultra_claro:  hsl(211, 100%, 91%);
+$Blanco:            hsl(0, 0%, 100%);
+$Gris_claro:        hsl(202, 0%, 98%);
+$Gris_oscuro:       hsl(195, 1%, 28%);
+
+//Tamaño de las letras
+$Tam-peq: 0.875rem; /* 14px/16=#rem */
+$Tam-med: 1.125rem; /* 18px/16=#rem */
+$Tam-grd: 1,875rem; // 30px/16
+$Tam-xgrd: 3.75rem; // 60px/16

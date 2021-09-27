@@ -1,0 +1,55 @@
+.services {
+    background-color: $Verde_ultra_claro;
+    text-align: center;
+    &__grid{
+        //border: 1px solid black;// para pruebas
+        @include breakpoint-up(medium){// solo es necesario esta seccion para el modo tablet
+            display: flex; // se llama la caracteristica flex
+            flex-wrap: wrap;
+        }
+    }
+    &__item{
+        //border: 1px solid black;// para pruebas
+        padding: 0.9375rem; //15px a cada lado-->15p/16 //espacio entre cada elemento o columna
+
+        @include breakpoint-up(medium){// solo es necesario esta seccion para el modo tablet
+            flex: 1 0 50%; //felx growth shrink basis
+        }
+        @include breakpoint-up(large){
+            flex: 1;
+        }
+    }   
+    &__icon{
+        img {
+            
+            width: 30%; // 140px/16=8.75rem
+            height: 30%; // 40px/16=2.5
+            margin-bottom: 1.25rem;//20px/16
+            border-radius: 50%;
+            @include breakpoint-up(large){
+                width: 80%; // 140px/16=8.75rem
+                height: 80%; // 40px/16=2.5
+                margin-bottom: 1.875rem;//30px/16
+            }
+        }
+    }
+    &__subtitle{
+        text-align: center;
+        line-height: 1.15;
+        color: $Madera;
+        font-weight: 700;
+        margin-bottom: 1.25rem;
+        font-size: 1.5625rem;//25px/16
+        @include breakpoint-up(large){
+            font-size: 1.875rem;//30px/16
+            margin-bottom: 1.875rem;
+        }
+    }
+    &__description{
+        text-align: justify;
+        line-height: 1.5; 
+        @include breakpoint-up(large){
+            font-size: 1.25rem;//20px/16
+        }
+    }
+}

@@ -1,0 +1,78 @@
+%%---HISTOGRAMA DEL GAS METANO---%%
+% GUARDADO DEL ID DE CANAL EN UNA VARIABLE.
+readChannelID = 1486425; 
+   
+% GUARDADO DEL ID DE CAMPO DE LECTURA EN UNA VARIABLE.
+Metano = 1;
+   
+% GUARDADO DE LA LLAVE DE API EN UNA VARIABLE.  
+readAPIKey = 'SVVLAKXW4F98CJJ1'; 
+
+% EJECUTA LA ACCION DE LECTURA DE DATOS, POR LOS ÚLITMOS 4320 MINUTOS.
+Metan = thingSpeakRead(readChannelID,'Fields',Metano,...
+'NumMinutes',4320, 'ReadKey',readAPIKey); 
+edges = linspace(0, 521, 40); % CREA 40 DIVISIONES DEL INTERVALO DE 0 PPM A 521 PPM.
+
+% AJUSTES ADICIONALES A LA GRÁFICA DEL HISTOGRAMA.   
+histogram(Metan,'BinEdges',edges); 
+xlim([-inf inf]);
+xlabel('Concentración de PPM'); 
+ylabel('# Mediciones por cada Concentración.'); 
+title('Histograma de la variación de Concentración (METANO)');
+grid on
+
+
+
+
+
+
+%%--CÓDIGO DEL HISTOGRAMA DEL GAS NATURAL--%%
+% GUARDADO DEL ID DE CANAL EN UNA VARIABLE.
+readChannelID = 1486425; 
+   
+% GUARDADO DEL ID DEL CAMPO EN UNA VARIABLE. 
+Natural = 2;
+% GUARDADO DE LA LLAVE DE LECTURA EN UNA VARIABLE. 
+readAPIKey = 'SVVLAKXW4F98CJJ1'; 
+
+% EJECUTA LA ACCION DE LECTURA DE DATOS, POR LOS ÚLITMOS 4320 MINUTOS.
+Nat = thingSpeakRead(readChannelID,'Fields',Natural,...
+'NumMinutes',4320, 'ReadKey',readAPIKey); 
+edges = linspace(1, 151, 10); % CREA 10 DIVISIONES DEL INTERVALO DE 1 PPM A 151 PPM.
+
+% AJUSTES ADICIONALES A LA GRÁFICA DEL HISTOGRAMA. 
+histogram(Nat,'BinEdges',edges); 
+xlim([-inf inf]);
+xlabel('Concentración de PPM'); 
+ylabel('# Mediciones por cada Concentración.'); 
+title('Histograma de la variación de Concentración (G. Natural)');
+grid on
+
+
+
+
+
+
+
+
+%%---HISTOGRAMA DEL GAS METANO---%%
+% GUARDADO DEL ID DE CANAL EN UNA VARIABLE.
+readChannelID = 1486425; 
+   
+% GUARDADO DEL ID DE CAMPO DE LECTURA EN UNA VARIABLE.
+Mono = 3;
+   
+% GUARDADO DE LA LLAVE DE API EN UNA VARIABLE.   
+readAPIKey = 'SVVLAKXW4F98CJJ1'; 
+
+% EJECUTA LA ACCION DE LECTURA DE DATOS, POR LOS ÚLITMOS 4320 MINUTOS.
+Mon = thingSpeakRead(readChannelID,'Fields',Mono,...
+'NumMinutes',4320, 'ReadKey',readAPIKey); 
+edges = linspace(1, 771, 55); % CREA 55 DIVISIONES DEL INTERVALO DE 1 PPM A 771 PPM.
+% AJUSTES ADICIONALES A LA GRÁFICA DEL HISTOGRAMA.
+histogram(Mon,'BinEdges',edges); 
+xlim([-inf inf]);
+xlabel('Concentración de PPM'); 
+ylabel('# Mediciones por cada Concentración'); 
+title('Histograma de la variación de Concentración (MONÓXIDO)');
+grid on

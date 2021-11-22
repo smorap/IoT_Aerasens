@@ -1,0 +1,30 @@
+% CÓDIGO DE MATLAB PARA REALIZAR EL DESPLIEGUE DE LA GRÁFICA DEL GAS NATURAL. 
+
+% AQUÍ SE GUARDA EL ID DE CANAL EN UNA VARIABLE.
+readChannelID = [1486425];
+% SE DECLARAN LOS 3 CANALES EN TRES VARIABLES DIFERENTES.
+fieldID1 = 1;
+fieldID2 = 2;
+fieldID3 = 3;
+
+% SE GUARDA LA CORRESPONDIENTE LLAVE DE API DE LECTURA EN UNA VARIABLE.
+readAPIKey = 'SVVLAKXW4F98CJJ1';
+
+%% LECTURA DE DATOS CON ESTAMPA DE TIEMPO Y FECHA CON LECTURA DE 25 DE DATOS.%%
+[data, time] = thingSpeakRead(readChannelID, 'Field', fieldID2, 'NumPoints', 25, 'ReadKey', readAPIKey);
+
+%% VISUALIZACIÓN DE DATOS Y AJUSTES ADICIONALES A LAS GRÁFICAS. %%
+%plot(time, data,'w','LineWidth',0.1);
+%hold on
+yline(mean(data),'-.r','LineWidth',2.5)
+hold on 
+x = 1:25
+prob = polyfit(x,data,3)
+prob2 = polyval(prob,x)
+plot(prob2)
+hold on
+plot(data)
+ylabel('Valor de Concentración en PPM')
+xlabel('# de Muestra')
+title('Concentración de GAS Natural')
+legend('Valor Promedio','Regresión de PPM')
